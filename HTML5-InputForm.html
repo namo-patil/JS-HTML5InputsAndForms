@@ -21,7 +21,7 @@
       </div>
       <div>
         <label for="email">email input type: </label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" required pattern="^[a-z]+[_+-.]?[0-9a-z]+?[@][0-9a-z]+[.][a-z]+([.][a-z]+)?[,]?">
       </div>
       <div>
         <label for="url">url type input: </label>
@@ -33,7 +33,7 @@
       </div>
       <div>
         <label for="tel">tel input type: </label>
-        <input type="tel" id="tel" name="tel">
+        <input type="tel" id="tel" name="tel" >
       </div>
       <div>
         <label for="search">search input type: </label>
@@ -47,7 +47,7 @@
       <div>
         <label for="salary">Choose your salary: </label>
         <input type="range" name="salary" id="salary" min="300000" max="500000" step="100" value="400000">
-        <output class="salary-output" for="salary">400000</output>
+        <output class="salary-output" for="salary"></output>
       </div>
       <div>
         <button>Submit</button>
@@ -68,10 +68,13 @@
 
       const salary = document.querySelector('#salary');
       const output = document.querySelector('.salary-output');
-      outpuy.textContent = salary.value;
+      output.textContent = salary.value;
       salary.addEventListener('input', function() {
         output.textContent = salary.value;
       });
+      function save() {
+        alert("form created successfully")
+      }
     </script>
   </body>
 </html>
